@@ -12,6 +12,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import br.com.yousoft.model.Acao;
+import br.com.yousoft.model.CadastrarUsuario;
 import br.com.yousoft.model.Logar;
 import br.com.yousoft.util.Acoes;
 
@@ -36,6 +37,7 @@ public class ServletController extends HttpServlet {
 	public void init() throws ServletException {
 		super.init();
 		mapa.put(Acoes.LOGAR, new Logar());
+		mapa.put(Acoes.CADASTRAR_CLIENTE, new CadastrarUsuario());
 	}
 
 	/**
