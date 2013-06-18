@@ -48,6 +48,12 @@ public class CadastroUsuario {
 	}
 	
 	public void atualizar(Usuario usuario) throws AtualizacaoException{
+
+		String senhaCriptografada = Criptografia.encryptPassword(usuario.getSenha());
+		usuario.setSenha(senhaCriptografada);
+		usuario.setSituacao(Situacao.PAGAMENTO_OK);
+		usuario.setPerfil(Perfil.CLIENTE);
+		usuario.setStatus(Constantes.ATIVO);
 		boolean ok = dao.atualizarObjeto(usuario);
 		if(!ok){
 			throw new AtualizacaoException("Erro ao tentar atualizar usuário");
@@ -62,7 +68,7 @@ public class CadastroUsuario {
 	}
 	
 	public List<Usuario> listar(){
-		return dao.listarObjetos();
+		return dao.listarClientes();
 	}
 	
 	public Usuario logar(String login, String senha){

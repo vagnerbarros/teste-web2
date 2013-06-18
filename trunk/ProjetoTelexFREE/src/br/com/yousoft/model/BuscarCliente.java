@@ -18,7 +18,7 @@ public class BuscarCliente implements Acao{
 		Fachada fachada = Fachada.getInstance();
 		Usuario edicao = fachada.cadastroUsuario().buscarId(id);
 		if(edicao != null){
-			request.setAttribute(Parametros.USUARIO_EDICAO, edicao);
+			request.getSession().setAttribute(Parametros.USUARIO_EDICAO, edicao);
 		}
 		else{
 			paginaRetorno = Pagina.LISTAR_CLIENTES;
