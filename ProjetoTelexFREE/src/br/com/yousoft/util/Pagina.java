@@ -7,4 +7,6 @@ public class Pagina {
 	
 	//paginas do perfil admin
 	public static String CADASTRAR_CLIENTE = "admin/cadastrar_cliente.jsp";
+	public static String LISTAR_CLIENTES = "../admin/listar_clientes.jsp";
+	public static String ATUALIZAR_CLIENTE = "admin/atualizar_cliente.jsp";
 }

@@ -12,22 +12,22 @@ public class Usuario {
 	@Id
 	private Long id;
 	
-	@Column(name = "nome", length = 200, nullable = true)
+	@Column(name = "nome", length = 200, nullable = false)
 	private String nome;
 	
-	@Column(name = "login", length = 30, nullable = true)
+	@Column(name = "login", length = 30, nullable = false)
 	private String login;
 	
-	@Column(name = "senha", length = 100, nullable = true)
+	@Column(name = "senha", length = 100, nullable = false)
 	private String senha;
 	
-	@Column(name = "situacao", length = 30, nullable = true)
+	@Column(name = "situacao", length = 30, nullable = false)
 	private String situacao;
 	
-	@Column(name = "perfil", length = 100, nullable = true)
+	@Column(name = "perfil", length = 100, nullable = false)
 	private String perfil;
 	
-	@Column(name = "status", length = 20, nullable = true)
+	@Column(name = "status", length = 20, nullable = false)
 	private String status;
 
 	public Long getId() {

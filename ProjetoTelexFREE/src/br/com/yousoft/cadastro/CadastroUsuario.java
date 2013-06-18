@@ -43,6 +43,10 @@ public class CadastroUsuario {
 		}
 	}
 	
+	public Usuario buscarId(Long id){
+		return dao.buscarPorId(id);
+	}
+	
 	public void atualizar(Usuario usuario) throws AtualizacaoException{
 		boolean ok = dao.atualizarObjeto(usuario);
 		if(!ok){

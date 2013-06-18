@@ -1,4 +1,4 @@
-<%@page import="br.com.yousoft.util.Pagina"%>
+<%@page import="br.com.yousoft.entidades.Usuario"%>
 <%@page import="br.com.yousoft.util.Parametros"%>
 <%@page import="br.com.yousoft.util.Acoes"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
@@ -7,27 +7,20 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Cadastrar Cliente</title>
+<title>Atualizar Cliente</title>
 </head>
 <body>
-
 	<%
-	String err = request.getParameter(Parametros.ERRO);
-	if(err != null && !err.equals("")){ %>
-		<div>
-			<%=err %>
-		</div>
- <% } %>	
-	
-	<a href="<%=Pagina.LISTAR_CLIENTES %>"> Manter Clientes </a><br>
-	
+	Usuario edicao = (Usuario) request.getAttribute(Parametros.USUARIO_EDICAO);
+	if(edicao != null){
+	%>
 	<form action="../controlador" method="POST">
-		<input type="hidden" name="acao" value="<%=Acoes.CADASTRAR_CLIENTE %>">
-		Nome : <input type="text" name="nome"><br>
-		Login : <input type="text" name="login"><br>
+		<input type="hidden" name="acao" value="<%=Acoes.ATUALIZAR_CLIENTE %>">
+		Nome : <input type="text" name="nome" value="<%=edicao.getNome() %>"><br>
+		Login : <input type="text" name="login" value="<%=edicao.getLogin() %>"><br>
 		Senha : <input type="password" name="senha"><br>
-		<input type="submit" value="Cadastrar">
+		<input type="submit" value="Atualizar">
 	</form>
-
+	<%} %>
 </body>
 </html>

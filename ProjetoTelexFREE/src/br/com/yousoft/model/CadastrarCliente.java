@@ -9,7 +9,7 @@ import br.com.yousoft.fachada.Fachada;
 import br.com.yousoft.util.Pagina;
 import br.com.yousoft.util.Parametros;
 
-public class CadastrarUsuario implements Acao{
+public class CadastrarCliente implements Acao{
 
 	@Override
 	public String executar(HttpServletRequest request, HttpServletResponse response) {
