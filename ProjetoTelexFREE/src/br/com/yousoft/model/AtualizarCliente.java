@@ -16,11 +16,13 @@ public class AtualizarCliente implements Acao{
 		
 		String paginaRetorno = Pagina.LISTAR_CLIENTES;
 		
+		String id = request.getParameter("id");
 		String nome = request.getParameter("nome");
 		String login = request.getParameter("login");
 		String senha = request.getParameter("senha");
 		
 		Usuario usuario = new Usuario();
+		usuario.setId(Long.parseLong(id));
 		usuario.setNome(nome);
 		usuario.setLogin(login);
 		usuario.setSenha(senha);

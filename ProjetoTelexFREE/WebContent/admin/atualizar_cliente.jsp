@@ -11,11 +11,12 @@
 </head>
 <body>
 	<%
-	Usuario edicao = (Usuario) request.getAttribute(Parametros.USUARIO_EDICAO);
+	Usuario edicao = (Usuario) session.getAttribute(Parametros.USUARIO_EDICAO);
 	if(edicao != null){
 	%>
 	<form action="../controlador" method="POST">
 		<input type="hidden" name="acao" value="<%=Acoes.ATUALIZAR_CLIENTE %>">
+		<input type="hidden" name="id" value="<%=edicao.getId() %>">
 		Nome : <input type="text" name="nome" value="<%=edicao.getNome() %>"><br>
 		Login : <input type="text" name="login" value="<%=edicao.getLogin() %>"><br>
 		Senha : <input type="password" name="senha"><br>

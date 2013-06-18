@@ -2,6 +2,7 @@ package br.com.yousoft.dao;
 
 import java.util.List;
 
+import br.com.yousoft.dominio.Perfil;
 import br.com.yousoft.entidades.Usuario;
 
 public class UsuarioDAO extends GenericDAO<Usuario>{
@@ -17,5 +18,9 @@ public class UsuarioDAO extends GenericDAO<Usuario>{
 			retorno = lista.get(0);
 		}
 		return retorno;
+	}
+	
+	public List<Usuario> listarClientes(){
+		return buscarPorLike("perfil", Perfil.CLIENTE);
 	}
 }
