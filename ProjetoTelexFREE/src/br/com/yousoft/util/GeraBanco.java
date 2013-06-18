@@ -22,11 +22,9 @@ public class GeraBanco {
             u.setNome("YouSoft");
             u.setLogin("1");
             u.setSenha("1");
-            u.setSituacao(Situacao.PAGAMENTO_OK);
-            u.setPerfil(Perfil.ADMIN);
             
             Fachada f = Fachada.getInstance();
-            f.cadastroUsuario().cadastrar(u);
+            f.cadastroUsuario().cadastrarAdmin(u);
             
             JOptionPane.showMessageDialog(null, "O Banco de Dados foi gerado com sucesso!",
             		"Fafica .:. Alerta",JOptionPane.INFORMATION_MESSAGE);
