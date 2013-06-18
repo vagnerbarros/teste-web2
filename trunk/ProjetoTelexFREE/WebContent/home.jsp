@@ -1,3 +1,5 @@
+<%@page import="br.com.yousoft.util.Pagina"%>
+<%@page import="br.com.yousoft.dominio.Perfil"%>
 <%@page import="br.com.yousoft.entidades.Usuario"%>
 <%@page import="br.com.yousoft.util.Parametros"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
@@ -13,7 +15,11 @@
 	<%
 	Usuario usuario = (Usuario) session.getAttribute(Parametros.USUARIO_LOGADO);
 	if(usuario != null){ %>
-		Bem Vindo <%=usuario.getNome() %>
+		Bem Vindo <%=usuario.getNome() %> <br>
+		
+		<%if(usuario.getPerfil().equals(Perfil.ADMIN)){ %>
+				<a href="<%=Pagina.CADASTRAR_CLIENTE %>">Cadastrar Cliente</a>
+		<%} %>
 	<% } %>
 
 
