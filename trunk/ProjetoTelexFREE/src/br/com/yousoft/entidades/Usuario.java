@@ -24,6 +24,9 @@ public class Usuario {
 	@Column(name = "situacao", length = 30, nullable = true)
 	private String situacao;
 	
+	@Column(name = "perfil", length = 100, nullable = true)
+	private String perfil;
+	
 	@Column(name = "status", length = 20, nullable = true)
 	private String status;
 
@@ -65,6 +68,14 @@ public class Usuario {
 
 	public void setSituacao(String situacao) {
 		this.situacao = situacao;
+	}
+	
+	public String getPerfil() {
+		return perfil;
+	}
+
+	public void setPerfil(String perfil) {
+		this.perfil = perfil;
 	}
 
 	public String getStatus() {
