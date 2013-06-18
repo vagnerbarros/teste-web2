@@ -3,6 +3,7 @@ package br.com.yousoft.cadastro;
 import java.util.List;
 
 import br.com.yousoft.dao.UsuarioDAO;
+import br.com.yousoft.dominio.Perfil;
 import br.com.yousoft.dominio.Situacao;
 import br.com.yousoft.entidades.Usuario;
 import br.com.yousoft.exceptions.AtualizacaoException;
@@ -19,7 +20,19 @@ public class CadastroUsuario {
 		this.dao = dao;
 	}
 	
-	public void cadastrar(Usuario usuario) throws CadastroException{
+	public void cadastrarAdmin(Usuario usuario) throws CadastroException{
+        usuario.setPerfil(Perfil.ADMIN);
+		cadastrar(usuario);
+	}
+	
+	public void cadastrarCliente(Usuario usuario) throws CadastroException {
+		usuario.setPerfil(Perfil.CLIENTE);
+		cadastrar(usuario);
+	}
+	
+	//método auxiliar que é utilizado por cadastrarCliente e cadastrarAdmin
+	private void cadastrar(Usuario usuario) throws CadastroException{
+		
 		usuario.setStatus(Constantes.ATIVO);
 		String senhaCriptografada = Criptografia.encryptPassword(usuario.getSenha());
 		usuario.setSenha(senhaCriptografada);
