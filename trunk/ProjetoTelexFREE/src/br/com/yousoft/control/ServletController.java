@@ -47,8 +47,9 @@ public class ServletController extends HttpServlet {
 		String acao = request.getParameter("acao");
 		Acao classeAcao = buscarAcao(acao);
 		String proximaPagina = classeAcao.executar(request, response);
-		RequestDispatcher dispatcher = request.getRequestDispatcher(proximaPagina);
-		dispatcher.forward(request, response);
+//		RequestDispatcher dispatcher = request.getRequestDispatcher(proximaPagina);
+//		dispatcher.forward(request, response);
+		response.sendRedirect(proximaPagina);
 	}
 
 	/**
